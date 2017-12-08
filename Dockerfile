@@ -1,8 +1,8 @@
-FROM microsoft/aspnetcore:2.0-nanoserver-sac2016
+FROM microsoft/aspnetcore
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/aspnetcore-build:2.0-nanoserver-sac2016
+FROM microsoft/aspnetcore-build
 WORKDIR /src
 COPY *.sln ./
 COPY WebApplication1/WebApplication1.csproj WebApplication1/
