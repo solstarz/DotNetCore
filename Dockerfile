@@ -11,10 +11,10 @@ COPY . .
 WORKDIR /src/WebApplication1
 RUN dotnet build -c Release -o /app
 
-FROM build AS publish
+FROM build
 RUN dotnet publish -c Release -o /app
 
-FROM base AS final
+FROM base
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "WebApplication1.dll"]
