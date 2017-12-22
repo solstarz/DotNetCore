@@ -1,8 +1,8 @@
-FROM microsoft/aspnetcore
+FROM microsoft/aspnetcore AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/aspnetcore-build
+FROM microsoft/aspnetcore-build AS build-env
 WORKDIR /src
 COPY *.sln ./
 COPY WebApplication1/WebApplication1.csproj WebApplication1/
